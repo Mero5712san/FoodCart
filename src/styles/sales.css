@@ -1,0 +1,17 @@
+.sales{
+    display: flex;
+    scrollbar-width: none;
+
+}
+.sales .second{
+    background-color: #F1F3F6;
+    width: 37vw;
+    height: 100vh;
+    overflow: hidden;
+    border-left: 2px  solid #b2b2b4;
+
+}
+.sales .first{
+    height: 100vh;
+    overflow: hidden;
+}
