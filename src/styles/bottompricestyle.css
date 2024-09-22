@@ -8,6 +8,8 @@
     font-weight: 300;
     text-transform: capitalize;
     color: white;
+    bottom: 0vh; 
+    width:100%;
 }
 .bottomprice svg{
     width: 1.3rem;

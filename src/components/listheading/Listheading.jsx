@@ -7,6 +7,7 @@ const Listheading = () => {
                 <li className='item'>item</li>
                 <li>Quantity</li>
                 <li>amount(SAR)</li>
+                <li className='disp'>  </li>
             </div>
         </div>
     );

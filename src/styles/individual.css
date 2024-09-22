@@ -1,7 +1,9 @@
 .individual {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 100%;
+    height: 100vh;
 }
 
 .individual .topbar {
@@ -11,13 +13,14 @@
 }
 
 .individual .topbar .bold {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 800;
 }
 
 .individual .topbar li svg {
-    width: 1.5rem;
+    width: 1.1rem;
     fill: #4E585E;
+    cursor: pointer;
 }
 
 .individual .food {
@@ -26,17 +29,17 @@
 }
 
 .individual .food img {
-    width: 10vw;
-    height: 16vh;
+    width: 5vw;
+    height: 10vh;
     object-fit: cover;
     border-radius: 0.5rem;
-    margin: 0.5rem;
+    margin: 1rem;
 }
 
 .individual .food .name {
-    font-size: 18px;
+    font-size:1rem;
     font-weight: 600;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     text-transform: capitalize;
 }
 
@@ -48,6 +51,7 @@
     border-radius: 0.5rem;
     overflow: hidden;
     cursor: pointer;
+    font-size: 0.9rem;
 }
 
 .individual .slidebar .active {
@@ -69,15 +73,15 @@
 }
 
 .individual .quantity {
-    /* display: flex; */
-    display: none;
+    display: flex;
     flex-direction: column;
     margin: 1rem;
 }
 
+.individual .add-ons h2 ,
 .individual .quantity h2 {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 1rem;
     text-transform: capitalize;
     margin: 1rem 0rem;
 }
@@ -87,7 +91,7 @@
     justify-content: space-between;
     border-bottom: 1px solid #D9DBDD;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-transform: capitalize;
     padding: 0.8rem;
 }
@@ -121,4 +125,69 @@
     font-size: 0.9rem;
     text-transform: capitalize;
     padding: 0.8rem; 
+}
+
+.individual .counteditors{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    bottom: 0vh;
+    /* background-color: gray; */
+    border-top: 1px solid #D9DBDD;
+}
+
+.individual .counteditors .counts{
+    display: flex;
+    padding-top:1rem;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.individual .counteditors .counts .amount{
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.individual .counteditors .countbtn{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+}
+
+.individual .counteditors .countbtn .btn{
+    display: flex;
+    justify-content: center;
+    border: 1px solid #D9DBDD;
+    background-color: #ffffff;
+    align-items: center;
+    gap: 0.1rem;
+    border-radius: 0.5rem;
+    width: 30%;
+
+}
+
+.individual .counteditors .countbtn .btn li{
+    padding: 0.6rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.individual .counteditors .countbtn svg{
+    width: 1.5rem;
+    stroke: #4E585E !important;
+}
+
+.individual .counteditors .countbtn .orderbtn{
+    color: white ;
+    padding: 0.6rem;
+    border: 1px solid #1263DF;
+    background-color: #1263DF;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    width: 60%;
+    justify-content: center;
+    border-radius: 0.5rem;
 }

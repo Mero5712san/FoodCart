@@ -10,21 +10,83 @@ import Individual from './Individual';
 
 const Sales = () => {
   let [second, setsecond] = useState("payment")
-  let getpagecond = (data)=>{
-    console.log(data)
+  let [selectedfood, setselectedfood] = useState("")
+  let [isfoodselected, setisfoodselected] = useState(false)
+  let [cartItems, setCartItems] = useState([])
+
+  let getpagecond = (data) => {
+    // console.log(data)
     setsecond(data)
   }
+  let getfoodcondition = (condition) => {
+    // console.log(condition)
+    setisfoodselected(condition ? "payment" : "")
+  }
+  let handlefoodselected = (cond) => {
+    setisfoodselected(cond)
+  }
+  let handleselectedfood = (food) => {
+    setselectedfood(food)
+  }
+  // console.log(isfoodselected)
+  // console.log(cartItems)
+
+  const addToCart = (food) => {
+    const existingItem = cartItems.find(
+      (item) => item.name === food.name && item.size === food.size
+    );
+    
+    if (existingItem) {
+      setCartItems(cartItems.map(item =>
+        item.name === food.name && item.size === food.size
+          ? { ...item, quantity: item.quantity + food.quantity}
+          : item
+      ));
+    } else {
+      setCartItems([...cartItems, { ...food}]);
+    }
+  };
+
+  const increaseQuantity = (index) => {
+    setCartItems(cartItems.map((item, i) =>
+      i === index ? { ...item, quantity: item.quantity + 1 } : item
+    ));
+  };
+
+  const decreaseQuantity = (index) => {
+    setCartItems(cartItems.map((item, i) =>
+      i === index && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
+    ));
+  };
+
+  const deleteItem = (index) => {
+    setCartItems(cartItems.filter((_, i) => i !== index));
+  };
+
+  const calculateGrandTotal = () => {
+    return cartItems.reduce((total, item) => total + (item.unitPrice * item.quantity), 0);
+  };
+
+  
+
+  // console.log(calculateGrandTotal())
+  // console.log(cartItems)
   return (
     <div className="sales">
       <div className="first">
-      <Searchbar pagecond = {getpagecond}/>
-      <Summary />
-      <Cartlist />
-      {second == "payment"?"":<Bottomprice />}
+        <div>
+          <Searchbar pagecond={getpagecond}/>
+          <Summary />
+          <Cartlist cartItems={cartItems} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} deleteItem={deleteItem} />
+        </div>
+        <div>
+          {second == "payment" ? "" : <Bottomprice grandTotal={calculateGrandTotal()} />}
+        </div>
       </div>
       <div className="second">
-        {/* {second ==  "payment" ? <Payment /> : <Menulist />} */}
-        {second ==  "payment" ? <Payment /> : <Individual />}
+        {!isfoodselected ?
+          <div> {second == "payment" ? <Payment subtotal ={calculateGrandTotal()} /> : <Menulist onSelectFood={handleselectedfood} foodselected={handlefoodselected} pagecond={getpagecond} />}</div> :
+          <div>{second == "payment" ? <Payment subtotal ={calculateGrandTotal()} /> : <Individual food={selectedfood} foodselectedcond={getfoodcondition} addToCart={addToCart} />}</div>}
       </div>
     </div>
   );

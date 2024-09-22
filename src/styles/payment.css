@@ -13,23 +13,24 @@
     color: #4E585E;
     text-transform: capitalize;
     align-items: center;
+    font-size: 0.95rem;
 }
 .payment .bill .elements .profileinfo{
     display: flex;
 }
 .payment .bill .elements .name{
     color: grey;
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin: 0.2rem;
 }
 .payment .bill .elements .icon svg{
-    width: 1rem;
+    width: 0.9rem;
     fill: gray;
     margin: 0.2rem;
 }
 
 .payment .bill .elements .heading{
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 0.01rem;
     color: #000000;
@@ -43,12 +44,12 @@
 }
 .payment .bill .elements .grandamount .normal{
     font-weight:500;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .payment .bill .elements .grandamount{
     color: #000000;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .payment .bill .line{
@@ -72,14 +73,14 @@
     border-top: 1px solid #D9DBDD;
     border-bottom: 1px solid #D9DBDD;
     width: 100%;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     padding: 1rem;
     cursor: pointer;
 }
 
 .payment .bottom .notes .icon svg{
-    width: 1rem;
+    width: 0.9rem;
     margin: 0.5rem;
 }
 
@@ -92,7 +93,7 @@
 }
 
 .payment .bottom .options .box svg{
-    width: 1.2rem;
+    width: 1rem;
     margin: 0.3rem 0.3rem 0rem 0rem;   
     
 }
@@ -108,7 +109,7 @@
     color: #07273D;
     fill: #07273D;
     border-radius: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     width: 30%;
     cursor: pointer;
@@ -132,7 +133,7 @@
     font-weight: 600;
     border-radius: 0.5rem;
     width: 30%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -150,7 +151,7 @@
     color: white ;
     font-weight: 600;
     width: 60%;
-    font-size: 18px;
+    font-size: 1rem;
     border-radius: 0.5rem;
     cursor: pointer;
 }

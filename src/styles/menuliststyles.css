@@ -1,6 +1,6 @@
 .menulistitem{
     display: flex;
-    width: 37vw;
+    width: 33vw;
     flex-direction: column;
     scroll-behavior: smooth;
 }
@@ -15,7 +15,7 @@
 }
 
 .menulistitem .topbar .heading{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     width: 80%;
 }
@@ -23,7 +23,7 @@
     fill: gray;
 }
 .menulistitem .topbar svg{
-    width: 1.2rem;
+    width: 1.1rem;
     cursor: pointer;
 }
 .menulistitem .filters{
@@ -45,6 +45,7 @@
     font-weight: 500;
     text-transform: capitalize;
     cursor: pointer;
+    font-size: 0.9rem;
 }
 
 .menulistitem .filters .filteractive{
@@ -56,6 +57,7 @@
     font-weight: 500;
     text-transform: capitalize;
     cursor: pointer;
+    font-size: 0.9rem;
 }
 /* ================================================ */
 
@@ -64,8 +66,8 @@
     flex-wrap: wrap;
     overflow: scroll;
     justify-content: center;
-    gap:1rem;
-    height: 75vh;
+    gap:0.8rem;
+    height: 78vh;
     padding-top: 1rem;
 }
 
@@ -77,7 +79,7 @@
     width: fit-content;
     height: fit-content;
     background-color: white;
-    width: 11vw;
+    width: 10vw;
     cursor: pointer;
     height: 24vh;
 }
@@ -91,7 +93,7 @@
 
 .menulistitem .items .itemlist .itemdetail{
     margin: 0rem 0.2rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 500;
     text-transform: capitalize;
 }

@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../styles/payment.css'
 import Finalizebar from '../../components/finalizebar/Finalizebar';
-const Payment = () => {
+const Payment = ({subtotal }) => {
+    const [grandTotal, setGrandTotal] = useState(0);
+    const taxPercentage = 10; 
+
+    const calculateGrandTotal = () => {
+      const taxAmount = (subtotal * taxPercentage) / 100;
+      const total = subtotal + taxAmount;
+      setGrandTotal(total.toFixed(2)); 
+    };
+  
+    useEffect(() => {
+      calculateGrandTotal();
+    }, [subtotal]);
+
     return (
         <div className="payment">
             <div className="bill">
@@ -33,19 +46,19 @@ const Payment = () => {
                 </div>
                 <div className="elements">
                     <li>sub total</li>
-                    <li className='amount'>SAR 0.00</li>
+                    <li className='amount'>SAR {subtotal.toFixed(2)}</li>
                 </div>
                 <div className="elements">
                     <li>Taxable amount</li>
-                    <li className='amount'>SAR 0.00</li>
+                    <li className='amount'>SAR {(taxPercentage / 100).toFixed(2)}%</li>
                 </div>
                 <div className="elements">
                     <li>total tax</li>
-                    <li className='amount'>SAR 0.00</li>
+                    <li className='amount'>SAR {(subtotal * taxPercentage / 100).toFixed(2)}</li>
                 </div>
                 <div className="elements line">
                     <li>grand total</li>
-                    <li className="grandamount"><span className='normal'>SAR</span> 0.00</li>
+                    <li className="grandamount"><span className='normal'>SAR {grandTotal}</span></li>
                 </div>
             </div>
 
