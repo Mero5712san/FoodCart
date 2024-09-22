@@ -37,14 +37,34 @@
     align-items: center;
     border-radius: 0.5rem;
     padding: 0.6rem;
+    cursor: pointer;
 }
 
 .searchmenu .booklet svg{
     width: 2rem;
-    fill: blue;
+    fill: #1263DF;
 }
 
 .searchmenu .booklet:hover,
 .searchmenu .searchbar:hover{
     box-shadow: 0 0 5px 2px rgb(208, 205, 205);
+}
+
+.searchmenu .bookletactive{
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid #1263DF;
+    margin: 0rem 0rem 0rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 0.6rem;
+    cursor: pointer;
+    background-color: #1263DF;
+}
+
+.searchmenu .bookletactive svg{
+    width: 2rem;
+    fill: #ffffff;
 }

@@ -75,6 +75,7 @@
     font-size: 1rem;
     font-weight: 600;
     padding: 1rem;
+    cursor: pointer;
 }
 
 .payment .bottom .notes .icon svg{
@@ -93,6 +94,7 @@
 .payment .bottom .options .box svg{
     width: 1.2rem;
     margin: 0.3rem 0.3rem 0rem 0rem;   
+    
 }
 
 .payment .bottom .options .box{
@@ -109,6 +111,7 @@
     font-size: 1.2rem;
     font-weight: 600;
     width: 30%;
+    cursor: pointer;
 }
 
 .finalize{
@@ -130,6 +133,7 @@
     border-radius: 0.5rem;
     width: 30%;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .finalize .print svg{
@@ -148,4 +152,5 @@
     width: 60%;
     font-size: 18px;
     border-radius: 0.5rem;
+    cursor: pointer;
 }

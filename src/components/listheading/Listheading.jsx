@@ -6,7 +6,7 @@ const Listheading = () => {
             <div className="headlist">
                 <li className='item'>item</li>
                 <li>Quantity</li>
-                <li>amount</li>
+                <li>amount(SAR)</li>
             </div>
         </div>
     );

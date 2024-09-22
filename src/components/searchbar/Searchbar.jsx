@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../styles/searchstyle.css'
-const Searchbar = () => {
+const Searchbar = ({pagecond}) => {
+    let [page, setpage] = useState("payment")
+    let togglepage = () =>{
+        page = page == "payment" ? "menulist" : "payment"
+        setpage(page)
+        pagecond(page)
+    }
     return (
         <div className="searchmenu">
             <div className="searchbar">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><title>Asset 19</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M63.22,59.45,47.3,43.53a26.7,26.7,0,1,0-3.77,3.77L59.45,63.22a2.67,2.67,0,0,0,3.77-3.77ZM26.67,48A21.34,21.34,0,1,1,48,26.67,21.36,21.36,0,0,1,26.67,48Z"></path></g></g></svg>
                 <input type="text" placeholder="Search" />
             </div>
-            <div className="booklet">
+            <div className={page == "payment"?"booklet":"bookletactive"} onClick={togglepage}>
                 <svg  viewBox="0 0 48 48"  xmlns="http://www.w3.org/2000/svg">
                     <path d="M11 15H20C20.2652 15 20.5196 14.8946 20.7071 14.7071C20.8946 14.5196 21 14.2652 21 14C21 13.7348 20.8946 13.4804 20.7071 13.2929C20.5196 13.1054 20.2652 13 20 13H11C10.7348 13 10.4804 13.1054 10.2929 13.2929C10.1054 13.4804 10 13.7348 10 14C10 14.2652 10.1054 14.5196 10.2929 14.7071C10.4804 14.8946 10.7348 15 11 15V15Z" ></path>
                     <path d="M28 15H37C37.2652 15 37.5196 14.8946 37.7071 14.7071C37.8946 14.5196 38 14.2652 38 14C38 13.7348 37.8946 13.4804 37.7071 13.2929C37.5196 13.1054 37.2652 13 37 13H28C27.7348 13 27.4804 13.1054 27.2929 13.2929C27.1054 13.4804 27 13.7348 27 14C27 14.2652 27.1054 14.5196 27.2929 14.7071C27.4804 14.8946 27.7348 15 28 15Z" ></path>

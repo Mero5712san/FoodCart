@@ -24,6 +24,7 @@
 }
 .menulistitem .topbar svg{
     width: 1.2rem;
+    cursor: pointer;
 }
 .menulistitem .filters{
     display: flex;
@@ -63,9 +64,9 @@
     flex-wrap: wrap;
     overflow: scroll;
     justify-content: center;
-    gap:0.5rem;
+    gap:1rem;
     height: 75vh;
-    margin-top: 0.2rem;
+    padding-top: 1rem;
 }
 
 .menulistitem .items .itemlist{
@@ -76,7 +77,7 @@
     width: fit-content;
     height: fit-content;
     background-color: white;
-    width: 11.5vw;
+    width: 11vw;
     cursor: pointer;
     height: 24vh;
 }
