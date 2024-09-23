@@ -67,7 +67,9 @@ const Sales = () => {
     return cartItems.reduce((total, item) => total + (item.unitPrice * item.quantity), 0);
   };
 
-  
+  const countofitems = () =>{
+    return cartItems.reduce((count, item)=>count + (item.quantity), 0)
+  }
 
   // console.log(calculateGrandTotal())
   // console.log(cartItems)
@@ -80,7 +82,7 @@ const Sales = () => {
           <Cartlist cartItems={cartItems} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} deleteItem={deleteItem} />
         </div>
         <div>
-          {second == "payment" ? "" : <Bottomprice grandTotal={calculateGrandTotal()} />}
+          {second == "payment" ? "" : <Bottomprice grandTotal={calculateGrandTotal()}  count = {countofitems()}/>}
         </div>
       </div>
       <div className="second">
