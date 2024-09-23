@@ -132,7 +132,7 @@
     background-color:white;
     font-weight: 600;
     border-radius: 0.5rem;
-    width: 30%;
+    width: 33%;
     font-size: 1rem;
     cursor: pointer;
 }
@@ -150,8 +150,9 @@
     background-color: #2163df;
     color: white ;
     font-weight: 600;
-    width: 60%;
+    width: 63%;
     font-size: 1rem;
     border-radius: 0.5rem;
     cursor: pointer;
+    margin-left: 1rem;
 }
