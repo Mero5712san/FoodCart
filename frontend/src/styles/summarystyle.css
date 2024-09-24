@@ -1,0 +1,56 @@
+.summary{
+    display: flex;
+    justify-content: space-between;
+    width: 61vw;
+    height: 8vh;
+    padding: 0rem 0.5rem;
+    margin: 0rem 0rem;
+}
+
+.summary .text{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    gap: 0.2rem;
+    text-transform: capitalize;
+    justify-content: center;
+    padding: 0rem 0rem 0rem 0.5rem;
+}
+
+.summary .text .btext{
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.01rem;
+}
+
+.summary .text .orderid{
+    color: #6A7174;
+    font-size: 0.8rem;
+    margin: 0.1rem;
+}
+
+.summary .text .id{
+    font-weight: 600;
+    color: #000;
+}
+
+.summary .icons svg:hover{
+    box-shadow: 0 0 5px 2px rgb(208, 205, 205);
+}
+.summary .icons{
+    display: flex;
+    gap:0vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.summary .icons svg{
+    width:2.3rem;
+    border: 1px solid #D9DBDD;
+    border-radius: 0.5rem;
+    padding: 0.6rem;
+    margin: 0.5rem;
+    fill: rgb(0, 0, 0);
+    cursor: pointer;
+    stroke-width: 2;
+}

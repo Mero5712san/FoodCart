@@ -1,0 +1,72 @@
+.searchmenu {
+    display: flex;
+    width: 61vw;
+    height: 7vh;
+    padding: 0rem 1rem 1rem 1rem;
+    overflow: hidden;
+    margin: 1rem 0rem 0rem 0rem;
+}
+
+.searchmenu .searchbar {
+    display: flex;
+    width: 100%;
+    height: 2.4rem;
+    border: 1px solid #D9DBDD;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.searchmenu .searchbar svg {
+    width: 1.5rem;
+    margin: 0.7rem;
+}
+
+.searchmenu .searchbar input {
+    outline: none;
+    border: none;
+    font-size: 18px;
+    width: 100%;
+    padding: 1rem;
+}
+
+.searchmenu .booklet {
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 1px solid #D9DBDD;
+    margin: 0rem 0rem 0rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    cursor: pointer;
+}
+
+.searchmenu .booklet svg {
+    width: 2rem;
+    fill: #1263DF;
+}
+
+.searchmenu .booklet:hover,
+.searchmenu .searchbar:hover {
+    box-shadow: 0 0 5px 2px rgb(208, 205, 205);
+}
+
+.searchmenu .bookletactive {
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 1px solid #1263DF;
+    margin: 0rem 0rem 0rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    cursor: pointer;
+    background-color: #1263DF;
+}
+
+.searchmenu .bookletactive svg {
+    width: 2rem;
+    fill: #ffffff;
+}

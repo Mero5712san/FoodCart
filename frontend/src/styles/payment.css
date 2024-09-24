@@ -1,0 +1,159 @@
+.payment{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+.payment .bill .elements{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    color: #4E585E;
+    text-transform: capitalize;
+    align-items: center;
+    font-size: 0.95rem;
+}
+.payment .bill .elements .profileinfo{
+    display: flex;
+}
+.payment .bill .elements .name{
+    color: grey;
+    font-size: 0.9rem;
+    margin: 0.2rem;
+}
+.payment .bill .elements .icon svg{
+    width: 0.9rem;
+    fill: gray;
+    margin: 0.2rem;
+}
+
+.payment .bill .elements .heading{
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.01rem;
+    color: #000000;
+    text-transform: capitalize;
+}
+
+.payment .bill .elements .amount{
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0.01rem;
+}
+.payment .bill .elements .grandamount .normal{
+    font-weight:500;
+    font-size: 1rem;
+}
+.payment .bill .elements .grandamount{
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.payment .bill .line{
+    border-top: 1px solid #D9DBDD;
+    padding-top: 1rem;
+}
+
+.payment .bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-transform: capitalize;
+}
+
+.payment .bottom .notes{
+    display: flex;
+    color:#07273D ;
+    justify-content: center; 
+    align-items: center;   
+    border-top: 1px solid #D9DBDD;
+    border-bottom: 1px solid #D9DBDD;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.payment .bottom .notes .icon svg{
+    width: 0.9rem;
+    margin: 0.5rem;
+}
+
+.payment .bottom .options{
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #D9DBDD;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment .bottom .options .box svg{
+    width: 1rem;
+    margin: 0.3rem 0.3rem 0rem 0rem;   
+    
+}
+
+.payment .bottom .options .box{
+    border: 1.75px solid  #07273D;
+    background-color: white;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #07273D;
+    fill: #07273D;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 30%;
+    cursor: pointer;
+}
+
+.finalize{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 1rem;
+}
+
+.finalize .print{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #1263DF;
+    color: #1263DF;
+    padding: 0.5rem;
+    background-color:white;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    width: 33%;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.finalize .print svg{
+    width: 1rem;
+    fill: #1263DF;
+    margin: 0rem 0.5rem;
+}
+
+.finalize .proceed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2163df;
+    color: white ;
+    font-weight: 600;
+    width: 63%;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
