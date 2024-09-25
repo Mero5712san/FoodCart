@@ -1,41 +1,53 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../config/db');
-const ProductCategory = require('./ProductCategory');
-const ProductVariant = require('./ProductVariant');
+'use strict';
+const { Model, UUIDV4 } = require('sequelize');
 
-const Product = sequelize.define('products', {
-  id: {
-    type: Sequelize.UUID,
-    primaryKey: true,
-    defaultValue: Sequelize.UUIDV4,
-  },
-  name: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-  category_id: {
-    type: Sequelize.INTEGER,
-    references: {
-      model: ProductCategory,
-      key: 'id',
+module.exports = (sequelize, DataTypes) => {
+  class Product extends Model {
+    static associate(models) {
+      Product.belongsTo(models.ProductCategoryMaster, {
+        foreignKey: 'category_id',
+        as: 'category',
+      });
+      Product.hasMany(models.ProductVariant, {
+        foreignKey: 'product_id',
+        as: 'variants',
+      });
+    }
+  }
+
+  Product.init({
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: UUIDV4,
+      allowNull: false,
+      primaryKey: true,
     },
-  },
-  created_at: {
-    type: Sequelize.DATE,
-    defaultValue: Sequelize.NOW,
-  },
-  img_url: {
-    type: Sequelize.TEXT,
-    allowNull: false,
-  },
-}, {
-  timestamps: false,
-});
+    name: {
+      type: DataTypes.STRING(255),
+      allowNull: false,
+    },
+    category_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'ProductCategoryMaster',
+        key: 'id',
+      },
+      allowNull: false,
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    img_url: {
+      type: DataTypes.TEXT,
+    },
+  }, {
+    sequelize,
+    modelName: 'Product',
+    tableName: 'products',
+    timestamps: false,
+  });
 
-// Define associations in a separate method
-Product.associate = (models) => {
-  Product.belongsTo(models.ProductCategory, { foreignKey: 'category_id' });
-  Product.hasMany(models.ProductVariant, { foreignKey: 'product_id' });
+  return Product;
 };
-
-module.exports = Product;

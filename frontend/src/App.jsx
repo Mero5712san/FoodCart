@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css'
 import Routercomp from './router/Routercomp';
-import ProductsList from './sample';
+// import ProductsList from './sample';
 
 const App = () => {
   return (

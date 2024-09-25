@@ -1,46 +1,54 @@
-// ProductVariant.js
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/db'); // Adjust the path as necessary
+'use strict';
+const { Model, UUIDV4 } = require('sequelize');
 
-class ProductVariant extends Model {}
+module.exports = (sequelize, DataTypes) => {
+  class ProductVariant extends Model {
+    static associate(models) {
+      ProductVariant.belongsTo(models.Product, {
+        foreignKey: 'product_id',
+        as: 'product',
+      });
+    }
+  }
 
-ProductVariant.init({
-  id: {
-    type: DataTypes.UUID,
-    primaryKey: true,
-    defaultValue: DataTypes.UUIDV4,
-  },
-  product_id: {
-    type: DataTypes.UUID,
-    references: {
-      model: 'products', // Ensure this matches the model name defined in Product.js
-      key: 'id',
+  ProductVariant.init({
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: UUIDV4,
+      allowNull: false,
+      primaryKey: true,
     },
-  },
-  name: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  is_active: {
-    type: DataTypes.BOOLEAN,
-  },
-  created_at: {
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW,
-  },
-  price: {
-    type: DataTypes.DECIMAL(10, 2),
-    allowNull: false,
-  },
-}, {
-  sequelize,
-  modelName: 'product_variants', // Model name
-  timestamps: false,
-});
+    product_id: {
+      type: DataTypes.UUID,
+      references: {
+        model: 'Product',
+        key: 'id',
+      },
+      allowNull: false,
+    },
+    name: {
+      type: DataTypes.STRING(255),
+      allowNull: false,
+    },
+    is_active: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    price: {
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: false,
+    },
+  }, {
+    sequelize,
+    modelName: 'ProductVariant',
+    tableName: 'product_variants',
+    timestamps: false,
+  });
 
-// Define associations outside of init
-ProductVariant.associate = (models) => {
-  ProductVariant.belongsTo(models.Product, { foreignKey: 'product_id' }); // Ensure this matches the model name
+  return ProductVariant;
 };
-
-module.exports = ProductVariant;
