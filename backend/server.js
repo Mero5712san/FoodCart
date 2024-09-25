@@ -1,7 +1,11 @@
 const express = require('express');
+const cors = require('cors'); // Import the cors module
 const db = require('./models'); // This imports all models
 const app = express();
 const PORT = 3000;
+
+// Use CORS middleware
+app.use(cors());
 
 // Middleware and routes
 app.get('/products', async (req, res) => {
